@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="Inventory.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Inventory">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Button
+            x:Name="SidebarToggle"
+            Content="Hide panel"
+            Click="ToggleSidebar"
+            HorizontalAlignment="Left"
+            Margin="12,8" />
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Name="SideColumn" Width="220" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel x:Name="SidePanel" Padding="12" Spacing="8">
+                <TextBlock Text="Sections" FontWeight="SemiBold" />
+                <Button Content="Stock" Click="ShowStock" HorizontalAlignment="Stretch" />
+                <Button Content="Orders" Click="ShowOrders" HorizontalAlignment="Stretch" />
+                <Button Content="Notes" Click="ShowNotes" HorizontalAlignment="Stretch" />
+            </StackPanel>
+
+            <Grid Grid.Column="1" BorderBrush="{ThemeResource DividerStrokeColorDefaultBrush}" BorderThickness="1,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="ListHeading" Text="Stock" Margin="16,12" FontWeight="SemiBold" />
+                <ListView
+                    x:Name="ItemList"
+                    Grid.Row="1"
+                    SelectionChanged="ItemChosen">
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="local:InventoryLine" xmlns:local="using:Inventory">
+                            <Grid ColumnSpacing="16" Padding="4,8">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{x:Bind Name}" />
+                                <TextBlock Grid.Column="1" Text="{x:Bind Quantity}" />
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+
+            <StackPanel
+                Grid.Column="2"
+                Padding="16"
+                Spacing="8"
+                BorderBrush="{ThemeResource DividerStrokeColorDefaultBrush}"
+                BorderThickness="1,0,0,0">
+                <TextBlock Text="Detail" FontWeight="SemiBold" />
+                <TextBlock x:Name="DetailName" Text="Select an item" TextWrapping="Wrap" />
+                <TextBlock x:Name="DetailId" Opacity="0.7" />
+            </StackPanel>
+
+            <StackPanel
+                Grid.Column="3"
+                Padding="16"
+                Spacing="8"
+                BorderBrush="{ThemeResource DividerStrokeColorDefaultBrush}"
+                BorderThickness="1,0,0,0">
+                <TextBlock Text="Notes" FontWeight="SemiBold" />
+                <TextBlock x:Name="MetaBody" Text="Nothing selected" TextWrapping="Wrap" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
