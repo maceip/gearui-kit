@@ -1,6 +1,7 @@
 package com.gearui.navigation
 
 import kotlinx.coroutines.isActive
+import kotlinx.coroutines.test.runTest
 import kotlin.test.Test
 import kotlin.test.assertContentEquals
 import kotlin.test.assertEquals
@@ -308,5 +309,29 @@ class NavigatorStateTest {
         assertEquals(listOf(NavLayerRole.Below, NavLayerRole.Moving), swiping.map { it.role })
         assertEquals(home, swiping.first().entry.key)
         assertEquals(swiping.size, swiping.map { it.entry.key }.toSet().size, "no key twice in a frame")
+    }
+
+    @Test
+    fun aColumnPopRemovesOneEntryWithoutStartingATransition() = runTest {
+        val s = state()
+        val removed = mutableListOf<String>()
+        s.attach(
+            saveable = {},
+            onEntryRemovedRef = { removed += it.route.routeName },
+            animScope = this,
+        )
+        s.push(TestRoute.Detail)
+        s.push(TestRoute.Article(id = "1"))
+        s.columnLayout = ColumnLayout(
+            slots = listOf(
+                SceneColumn.Entry(s.entriesForTest[1].key, 2f),
+                SceneColumn.Entry(s.current.key, 3f),
+            ),
+        )
+        assertTrue(s.pop())
+        assertNull(s.movingEntry, "a column must not play the full-screen slide")
+        assertFalse(s.isTransitioning)
+        assertEquals(TestRoute.Detail, s.current.route, "one pop, not every entry that leaves the panes unchanged")
+        assertEquals(listOf("article"), removed)
     }
 }

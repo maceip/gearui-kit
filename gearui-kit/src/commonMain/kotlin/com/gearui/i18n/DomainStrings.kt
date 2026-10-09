@@ -51,6 +51,10 @@ data class CommonStrings(
     val loadMoreFailed: String,
     /** Footer once the list has no more pages. */
     val noMoreData: String,
+    /** Accessibility label for a window's minimize caption. */
+    val minimize: String,
+    /** Accessibility label for a window's maximize caption. */
+    val maximize: String,
 )
 
 data class CommonStringsPatch(
@@ -79,6 +83,8 @@ data class CommonStringsPatch(
     val partiallySelected: String? = null,
     val loadMoreFailed: String? = null,
     val noMoreData: String? = null,
+    val minimize: String? = null,
+    val maximize: String? = null,
 )
 
 val CommonStringsPatch.isEmpty: Boolean
@@ -106,7 +112,9 @@ val CommonStringsPatch.isEmpty: Boolean
         off == null &&
         partiallySelected == null &&
         loadMoreFailed == null &&
-        noMoreData == null
+        noMoreData == null &&
+        minimize == null &&
+        maximize == null
 
 fun CommonStrings.merge(patch: CommonStringsPatch?): CommonStrings {
     if (patch == null || patch.isEmpty) return this
@@ -136,6 +144,8 @@ fun CommonStrings.merge(patch: CommonStringsPatch?): CommonStrings {
         pullToRefresh = patch.pullToRefresh ?: pullToRefresh,
         releaseToRefresh = patch.releaseToRefresh ?: releaseToRefresh,
         refreshing = patch.refreshing ?: refreshing,
+        minimize = patch.minimize ?: minimize,
+        maximize = patch.maximize ?: maximize,
     )
 }
 

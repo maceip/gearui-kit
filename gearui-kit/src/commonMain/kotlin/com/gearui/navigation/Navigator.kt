@@ -37,7 +37,15 @@ import com.tencent.kuikly.compose.ui.layout.onGloballyPositioned
 import com.tencent.kuikly.compose.ui.graphics.Color
 import com.tencent.kuikly.compose.ui.graphics.graphicsLayer
 import com.tencent.kuikly.compose.ui.zIndex
+import com.gearui.foundation.border.BorderWidth
+import com.gearui.runtime.LocalSceneClaims
+import com.gearui.runtime.LocalScenePlaceholder
+import com.gearui.runtime.SceneClaims
 import com.gearui.theme.Theme
+import com.tencent.kuikly.compose.foundation.layout.Row
+import com.tencent.kuikly.compose.foundation.layout.fillMaxHeight
+import com.tencent.kuikly.compose.foundation.layout.width
+import androidx.compose.runtime.saveable.SaveableStateHolder
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
@@ -223,6 +231,18 @@ fun <R : NavRoute> Navigator(
         // cannot be BoxWithConstraints itself (pointerInput receives no events on
         // Kuikly's SubcomposeLayout). `enabled` is a constant; every dynamic
         // guard is decided by [NavigatorState.beginSwipe] in onStart.
+        val columns = state.columnLayout
+        if (columns != null) {
+            SceneColumns(
+                state = state,
+                layout = columns,
+                saveableHolder = saveableHolder,
+                background = Theme.colors.background,
+                content = content,
+            )
+            return@BoxWithConstraints
+        }
+
         val layers = state.visibleLayers()
         // Opaque backing for every navigation "screen". Without it, a page with a
         // transparent background lets the layer beneath show through — on device,
@@ -380,6 +400,60 @@ fun <R : NavRoute> Navigator(
     }
 }
 
+/**
+ * The entries [ColumnLayout] names, side by side. Each one is a foreground page:
+ * the point of the column is that the previous entry is on screen, not parked.
+ * Back is hidden here; the shell's back handler still pops one entry.
+ */
+@Composable
+private fun <R : NavRoute> SceneColumns(
+    state: NavigatorState<R>,
+    layout: ColumnLayout,
+    saveableHolder: SaveableStateHolder,
+    background: Color,
+    content: @Composable EntryScope<R>.(NavEntry<R>) -> Unit,
+) {
+    val entries = state.entriesForTest
+    Row(modifier = Modifier.fillMaxSize()) {
+        layout.slots.forEachIndexed { index, slot ->
+            if (index > 0) {
+                Box(
+                    modifier = Modifier
+                        .width(BorderWidth.thin)
+                        .fillMaxHeight()
+                        .background(Theme.colors.border),
+                )
+            }
+            Box(modifier = Modifier.weight(slot.weight).fillMaxHeight()) {
+                when (slot) {
+                    is SceneColumn.Placeholder -> LocalScenePlaceholder.current.invoke()
+                    is SceneColumn.Entry -> {
+                        val entry = entries.firstOrNull { it.key == slot.key } ?: return@Box
+                        key(entry.key) {
+                            saveableHolder.SaveableStateProvider(entry.key) {
+                                Box(modifier = Modifier.fillMaxSize().background(background)) {
+                                    CompositionLocalProvider(
+                                        LocalSceneClaims provides SceneClaims(hideBack = true),
+                                    ) {
+                                        val scope = EntryScopeImpl(
+                                            entry = entry,
+                                            controller = state,
+                                            isTop = true,
+                                            isForeground = true,
+                                            retained = state.retainedOf(entry.key),
+                                        )
+                                        scope.content(entry)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 /** The role a visible layer plays in the render loop. */
 /**
  * [Parked] is the entry right under the top while nothing moves: composed but not
@@ -481,6 +555,12 @@ internal class NavigatorState<R : NavRoute>(initialRoute: R) : NavigatorControll
      * private.
      */
     internal val entriesForTest: List<NavEntry<R>> get() = _entries
+
+    /**
+     * Columns to render instead of the full-screen stack. Set by the desktop
+     * shell for the current frame. Null is the phone stack, swipe-back included.
+     */
+    internal var columnLayout: ColumnLayout? by mutableStateOf(null)
 
     internal fun attachForTest(onEntryRemoved: (NavEntry<R>) -> Unit) {
         this.onEntryRemovedRef = onEntryRemoved
@@ -774,6 +854,16 @@ internal class NavigatorState<R : NavRoute>(initialRoute: R) : NavigatorControll
      * survivor goes Below -> Front at the same call site without remounting.
      */
     private fun startCommitPopAnim(outgoing: NavEntry<R>) {
+        // A column scene has the previous entry on screen already. A full-screen
+        // slide would cover the other pane. Remove the top and let the scene
+        // recompute. One entry, not every entry that leaves the pane set unchanged.
+        if (columnLayout != null) {
+            if (_entries.lastOrNull()?.key == outgoing.key) {
+                _entries.removeAt(_entries.size - 1)
+            }
+            notifyRemoved(outgoing)
+            return
+        }
         _swipeMode = false
         _moving = outgoing
         val scope = animScope

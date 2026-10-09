@@ -2540,6 +2540,114 @@
         }
       }
     },
+    "desktopTwoPaneMin": {
+      "$value": {
+        "value": 600,
+        "unit": "px"
+      },
+      "$extensions": {
+        "com.gearui.source": {
+          "basis": "gearui",
+          "why": "Material's medium lower bound. Below it a list-detail scene yields and the window shows only the top stack entry, which on a phone is the detail."
+        }
+      }
+    },
+    "desktopThreePaneMin": {
+      "$value": {
+        "value": 1200,
+        "unit": "px"
+      },
+      "$extensions": {
+        "com.gearui.source": {
+          "basis": "gearui",
+          "why": "Past the expanded width class. Two panes is the desktop default; a third pane needs this width and an extra entry actually on the stack."
+        }
+      }
+    },
+    "desktopSidebarWidthMac": {
+      "$value": {
+        "value": 240,
+        "unit": "px"
+      },
+      "$extensions": {
+        "com.gearui.source": {
+          "basis": "gearui",
+          "why": "macOS source-list width. It holds the same items as the phone's bottom bar, not a third scene."
+        }
+      }
+    },
+    "desktopSidebarWidthWindows": {
+      "$value": {
+        "value": 320,
+        "unit": "px"
+      },
+      "$extensions": {
+        "com.gearui.source": {
+          "basis": "gearui",
+          "why": "WinUI NavigationView pane width. Same items as the phone's bottom bar."
+        }
+      }
+    },
+    "desktopListPaneWidth": {
+      "$value": {
+        "value": 360,
+        "unit": "px"
+      },
+      "$extensions": {
+        "com.gearui.source": {
+          "basis": "gearui",
+          "why": "Preferred width of the list pane once two panes fit. The detail pane takes the rest."
+        }
+      }
+    },
+    "desktopMacTitleBarHeight": {
+      "$value": {
+        "value": 28,
+        "unit": "px"
+      },
+      "$extensions": {
+        "com.gearui.source": {
+          "basis": "gearui",
+          "why": "Room for the host's traffic lights. GearUI does not draw them."
+        }
+      }
+    },
+    "desktopMacTrafficLeading": {
+      "$value": {
+        "value": 78,
+        "unit": "px"
+      },
+      "$extensions": {
+        "com.gearui.source": {
+          "basis": "gearui",
+          "why": "Leading gutter so the window title clears the host's traffic lights."
+        }
+      }
+    },
+    "desktopWindowsTitleBarHeight": {
+      "$value": {
+        "value": 32,
+        "unit": "px"
+      },
+      "$extensions": {
+        "com.gearui.source": {
+          "basis": "gearui",
+          "why": "Windows caption bar. The buttons call the host; this skin only draws them."
+        }
+      }
+    },
+    "desktopWindowsCaptionWidth": {
+      "$value": {
+        "value": 46,
+        "unit": "px"
+      },
+      "$extensions": {
+        "com.gearui.source": {
+          "basis": "gearui",
+          "why": "One Windows caption button. Three of them sit at the end of the title bar."
+        }
+      }
+    },
     "backTopHalfWidth": {
       "$value": {
         "value": 24,

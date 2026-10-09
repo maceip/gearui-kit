@@ -128,6 +128,24 @@ render. The right-swipe is arbitrated so exactly one owner consumes it:
    comes about 12 ms after recognition. A parked page is hidden from screen readers,
    and the front page takes the hit test, so a tap on blank space never reaches it.
 
+**Desktop scenes.** A wide window does not nest a phone page, and a phone page
+does not nest the window. `DesktopShell` is the same `Navigator`. `roleOf` marks
+each route for one strategy. List-detail is the default: below 600 the window
+shows only the top entry, which on a phone is the detail; from 600 the entry
+under it sits beside it; a third pane needs 1200 and an extra entry on the
+consecutive run at the top of the stack. A normal page ends that run, so an
+older list is not pulled back across it. The supporting pane is two peers. It
+has no empty column, and on one partition it yields. The sidebar is the bottom
+bar moved across, not a scene column. The Mac and Windows frames are GearUI
+layout: a gutter where the host's traffic lights go, and caption buttons that
+call the host. `systemTitleBar` leaves that strip out when the operating-system
+window already has it. `desktop/windows` opens that window on Windows;
+`desktop/macos` is the AppKit host. Kuikly has no Windows renderer, so the
+Windows host paints GearUI in the client area. The title bar, resize, and
+caption buttons are the system's. There is no second renderer.
+Back pops one entry. It does not keep popping while the set of panes stays the
+same.
+
 System BACK is bridged by the runtime, not by `androidx.activity` handlers.
 
 ## Hard Constraints (PR Gate)

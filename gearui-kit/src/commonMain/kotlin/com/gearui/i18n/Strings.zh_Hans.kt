@@ -27,6 +27,8 @@ val StringsZhHans = Strings(
         pullToRefresh = "下拉刷新",
         releaseToRefresh = "松开立即刷新",
         refreshing = "正在刷新...",
+        minimize = "最小化",
+        maximize = "最大化",
     ),
     theming = ThemeStrings(
         theme = "主题",

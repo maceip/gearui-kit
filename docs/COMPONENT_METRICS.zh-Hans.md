@@ -4,7 +4,7 @@
 
 由 `scripts/component_spec.py` 从 `tokens/controls.tokens.json` 生成，请勿手改：改 token 及其 `$extensions."com.gearui.source"` 后重新生成。取值规则见 [VISUAL_SPEC.zh-Hans.md](./VISUAL_SPEC.zh-Hans.md) §2。理由（Why）列保持英文原文。
 
-已标注来源：**182 / 221** 个控件 token。其余列在 `tokens/provenance-baseline.txt`，该清单只能缩小。
+已标注来源：**191 / 230** 个控件 token。其余列在 `tokens/provenance-baseline.txt`，该清单只能缩小。
 
 ## accordion
 
@@ -123,6 +123,20 @@
 | `controlLarge` | 56 | 56 | — | HeroUI |  |
 | `controlMedium` | 48 | 48 | — | HeroUI |  |
 | `controlSmall` | 40 | 40 | — | HeroUI |  |
+
+## desktop
+
+| Token | GearUI | HeroUI Native | iOS | 取值依据 | 理由 |
+| --- | ---: | ---: | ---: | --- | --- |
+| `desktopListPaneWidth` | 360 | — | — | GearUI | Preferred width of the list pane once two panes fit. The detail pane takes the rest. |
+| `desktopMacTitleBarHeight` | 28 | — | — | GearUI | Room for the host's traffic lights. GearUI does not draw them. |
+| `desktopMacTrafficLeading` | 78 | — | — | GearUI | Leading gutter so the window title clears the host's traffic lights. |
+| `desktopSidebarWidthMac` | 240 | — | — | GearUI | macOS source-list width. It holds the same items as the phone's bottom bar, not a third scene. |
+| `desktopSidebarWidthWindows` | 320 | — | — | GearUI | WinUI NavigationView pane width. Same items as the phone's bottom bar. |
+| `desktopThreePaneMin` | 1200 | — | — | GearUI | Past the expanded width class. Two panes is the desktop default; a third pane needs this width and an extra entry actually on the stack. |
+| `desktopTwoPaneMin` | 600 | — | — | GearUI | Material's medium lower bound. Below it a list-detail scene yields and the window shows only the top stack entry, which on a phone is the detail. |
+| `desktopWindowsCaptionWidth` | 46 | — | — | GearUI | One Windows caption button. Three of them sit at the end of the title bar. |
+| `desktopWindowsTitleBarHeight` | 32 | — | — | GearUI | Windows caption bar. The buttons call the host; this skin only draws them. |
 
 ## dialog
 

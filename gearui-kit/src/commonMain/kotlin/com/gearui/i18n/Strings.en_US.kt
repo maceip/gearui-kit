@@ -27,6 +27,8 @@ val StringsEnUs = Strings(
         pullToRefresh = "Pull to refresh",
         releaseToRefresh = "Release to refresh",
         refreshing = "Refreshing…",
+        minimize = "Minimize",
+        maximize = "Maximize",
     ),
     theming = ThemeStrings(
         theme = "Theme",

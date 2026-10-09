@@ -30,6 +30,9 @@ out/
 # Build outputs
 **/build/
 **/out/
+desktop/windows/**/bin/
+desktop/windows/**/obj/
+desktop/windows/www/
 
 # Kotlin Native
 *.kexe

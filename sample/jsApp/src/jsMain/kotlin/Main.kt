@@ -17,13 +17,19 @@ fun main() {
     // KuiklyProcessor.preventDefaultDragAndSelect = false
 
     // A soft keyboard changes viewport height, not width. Only real width changes
-    // (window resize / rotation) should remeasure the Kuikly page.
+    // (window resize / rotation) should remeasure the phone page. A desktop host
+    // window resizes in both directions, and the columns have to follow.
+    val desktopHost = window.location.href.contains("systemTitleBar=1")
     var previousWidth = window.innerWidth
+    var previousHeight = window.innerHeight
     window.addEventListener("resize", {
         val width = window.innerWidth
-        if (width != previousWidth) {
+        val height = window.innerHeight
+        val widthChanged = width != previousWidth
+        if (widthChanged || (desktopHost && height != previousHeight)) {
             previousWidth = width
-            KuiklyRouter.updateViewportSize(width, window.innerHeight)
+            previousHeight = height
+            KuiklyRouter.updateViewportSize(width, height)
         }
     })
 

@@ -52,6 +52,15 @@ internal object ControlGeometry {
     val controlLarge = 56.dp
     val controlMedium = 48.dp
     val controlSmall = 40.dp
+    val desktopListPaneWidth = 360.dp
+    val desktopMacTitleBarHeight = 28.dp
+    val desktopMacTrafficLeading = 78.dp
+    val desktopSidebarWidthMac = 240.dp
+    val desktopSidebarWidthWindows = 320.dp
+    val desktopThreePaneMin = 1200.dp
+    val desktopTwoPaneMin = 600.dp
+    val desktopWindowsCaptionWidth = 46.dp
+    val desktopWindowsTitleBarHeight = 32.dp
     val dialogActionGap = 12.dp
     val dialogActionsTop = 20.dp
     val dialogBodyMaxHeight = 360.dp

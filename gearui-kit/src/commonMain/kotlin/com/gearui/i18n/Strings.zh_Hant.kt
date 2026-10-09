@@ -27,6 +27,8 @@ val StringsZhHant = Strings(
         pullToRefresh = "下拉重新整理",
         releaseToRefresh = "放開立即重新整理",
         refreshing = "重新整理中...",
+        minimize = "最小化",
+        maximize = "最大化",
     ),
     theming = ThemeStrings(
         theme = "主題",

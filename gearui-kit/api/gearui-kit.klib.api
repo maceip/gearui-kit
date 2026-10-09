@@ -952,6 +952,44 @@ final enum class com.gearui.components.upload/UploadStatus : kotlin/Enum<com.gea
     final fun values(): kotlin/Array<com.gearui.components.upload/UploadStatus> // com.gearui.components.upload/UploadStatus.values|values#static(){}[0]
 }
 
+final enum class com.gearui.desktop/DesktopChrome : kotlin/Enum<com.gearui.desktop/DesktopChrome> { // com.gearui.desktop/DesktopChrome|null[0]
+    enum entry Mac // com.gearui.desktop/DesktopChrome.Mac|null[0]
+    enum entry Platform // com.gearui.desktop/DesktopChrome.Platform|null[0]
+    enum entry Windows // com.gearui.desktop/DesktopChrome.Windows|null[0]
+
+    final val entries // com.gearui.desktop/DesktopChrome.entries|#static{}entries[0]
+        final fun <get-entries>(): kotlin.enums/EnumEntries<com.gearui.desktop/DesktopChrome> // com.gearui.desktop/DesktopChrome.entries.<get-entries>|<get-entries>#static(){}[0]
+
+    final fun valueOf(kotlin/String): com.gearui.desktop/DesktopChrome // com.gearui.desktop/DesktopChrome.valueOf|valueOf#static(kotlin.String){}[0]
+    final fun values(): kotlin/Array<com.gearui.desktop/DesktopChrome> // com.gearui.desktop/DesktopChrome.values|values#static(){}[0]
+}
+
+final enum class com.gearui.desktop/SceneKind : kotlin/Enum<com.gearui.desktop/SceneKind> { // com.gearui.desktop/SceneKind|null[0]
+    enum entry ListDetail // com.gearui.desktop/SceneKind.ListDetail|null[0]
+    enum entry Supporting // com.gearui.desktop/SceneKind.Supporting|null[0]
+
+    final val entries // com.gearui.desktop/SceneKind.entries|#static{}entries[0]
+        final fun <get-entries>(): kotlin.enums/EnumEntries<com.gearui.desktop/SceneKind> // com.gearui.desktop/SceneKind.entries.<get-entries>|<get-entries>#static(){}[0]
+
+    final fun valueOf(kotlin/String): com.gearui.desktop/SceneKind // com.gearui.desktop/SceneKind.valueOf|valueOf#static(kotlin.String){}[0]
+    final fun values(): kotlin/Array<com.gearui.desktop/SceneKind> // com.gearui.desktop/SceneKind.values|values#static(){}[0]
+}
+
+final enum class com.gearui.desktop/SceneRole : kotlin/Enum<com.gearui.desktop/SceneRole> { // com.gearui.desktop/SceneRole|null[0]
+    enum entry Detail // com.gearui.desktop/SceneRole.Detail|null[0]
+    enum entry Extra // com.gearui.desktop/SceneRole.Extra|null[0]
+    enum entry List // com.gearui.desktop/SceneRole.List|null[0]
+    enum entry Main // com.gearui.desktop/SceneRole.Main|null[0]
+    enum entry Single // com.gearui.desktop/SceneRole.Single|null[0]
+    enum entry Supporting // com.gearui.desktop/SceneRole.Supporting|null[0]
+
+    final val entries // com.gearui.desktop/SceneRole.entries|#static{}entries[0]
+        final fun <get-entries>(): kotlin.enums/EnumEntries<com.gearui.desktop/SceneRole> // com.gearui.desktop/SceneRole.entries.<get-entries>|<get-entries>#static(){}[0]
+
+    final fun valueOf(kotlin/String): com.gearui.desktop/SceneRole // com.gearui.desktop/SceneRole.valueOf|valueOf#static(kotlin.String){}[0]
+    final fun values(): kotlin/Array<com.gearui.desktop/SceneRole> // com.gearui.desktop/SceneRole.values|values#static(){}[0]
+}
+
 final enum class com.gearui.foundation.calendar/LunarFestival : kotlin/Enum<com.gearui.foundation.calendar/LunarFestival> { // com.gearui.foundation.calendar/LunarFestival|null[0]
     enum entry DoubleNinth // com.gearui.foundation.calendar/LunarFestival.DoubleNinth|null[0]
     enum entry DragonBoat // com.gearui.foundation.calendar/LunarFestival.DragonBoat|null[0]
@@ -1287,6 +1325,62 @@ sealed interface <#A: com.gearui.navigation/NavRoute> com.gearui.navigation/Navi
 }
 
 sealed interface com.gearui.components.icon/IconAsset // com.gearui.components.icon/IconAsset|null[0]
+
+sealed interface com.gearui.desktop/ResolvedScene { // com.gearui.desktop/ResolvedScene|null[0]
+    final class ListDetail : com.gearui.desktop/ResolvedScene { // com.gearui.desktop/ResolvedScene.ListDetail|null[0]
+        constructor <init>(com.gearui.desktop/SceneEntry?, com.gearui.desktop/SceneEntry?, com.gearui.desktop/SceneEntry?, kotlin/Boolean) // com.gearui.desktop/ResolvedScene.ListDetail.<init>|<init>(com.gearui.desktop.SceneEntry?;com.gearui.desktop.SceneEntry?;com.gearui.desktop.SceneEntry?;kotlin.Boolean){}[0]
+
+        final val detail // com.gearui.desktop/ResolvedScene.ListDetail.detail|{}detail[0]
+            final fun <get-detail>(): com.gearui.desktop/SceneEntry? // com.gearui.desktop/ResolvedScene.ListDetail.detail.<get-detail>|<get-detail>(){}[0]
+        final val extra // com.gearui.desktop/ResolvedScene.ListDetail.extra|{}extra[0]
+            final fun <get-extra>(): com.gearui.desktop/SceneEntry? // com.gearui.desktop/ResolvedScene.ListDetail.extra.<get-extra>|<get-extra>(){}[0]
+        final val list // com.gearui.desktop/ResolvedScene.ListDetail.list|{}list[0]
+            final fun <get-list>(): com.gearui.desktop/SceneEntry? // com.gearui.desktop/ResolvedScene.ListDetail.list.<get-list>|<get-list>(){}[0]
+        final val placeholder // com.gearui.desktop/ResolvedScene.ListDetail.placeholder|{}placeholder[0]
+            final fun <get-placeholder>(): kotlin/Boolean // com.gearui.desktop/ResolvedScene.ListDetail.placeholder.<get-placeholder>|<get-placeholder>(){}[0]
+
+        final fun component1(): com.gearui.desktop/SceneEntry? // com.gearui.desktop/ResolvedScene.ListDetail.component1|component1(){}[0]
+        final fun component2(): com.gearui.desktop/SceneEntry? // com.gearui.desktop/ResolvedScene.ListDetail.component2|component2(){}[0]
+        final fun component3(): com.gearui.desktop/SceneEntry? // com.gearui.desktop/ResolvedScene.ListDetail.component3|component3(){}[0]
+        final fun component4(): kotlin/Boolean // com.gearui.desktop/ResolvedScene.ListDetail.component4|component4(){}[0]
+        final fun copy(com.gearui.desktop/SceneEntry? = ..., com.gearui.desktop/SceneEntry? = ..., com.gearui.desktop/SceneEntry? = ..., kotlin/Boolean = ...): com.gearui.desktop/ResolvedScene.ListDetail // com.gearui.desktop/ResolvedScene.ListDetail.copy|copy(com.gearui.desktop.SceneEntry?;com.gearui.desktop.SceneEntry?;com.gearui.desktop.SceneEntry?;kotlin.Boolean){}[0]
+        final fun equals(kotlin/Any?): kotlin/Boolean // com.gearui.desktop/ResolvedScene.ListDetail.equals|equals(kotlin.Any?){}[0]
+        final fun hashCode(): kotlin/Int // com.gearui.desktop/ResolvedScene.ListDetail.hashCode|hashCode(){}[0]
+        final fun toString(): kotlin/String // com.gearui.desktop/ResolvedScene.ListDetail.toString|toString(){}[0]
+    }
+
+    final class Single : com.gearui.desktop/ResolvedScene { // com.gearui.desktop/ResolvedScene.Single|null[0]
+        constructor <init>(com.gearui.desktop/SceneEntry) // com.gearui.desktop/ResolvedScene.Single.<init>|<init>(com.gearui.desktop.SceneEntry){}[0]
+
+        final val entry // com.gearui.desktop/ResolvedScene.Single.entry|{}entry[0]
+            final fun <get-entry>(): com.gearui.desktop/SceneEntry // com.gearui.desktop/ResolvedScene.Single.entry.<get-entry>|<get-entry>(){}[0]
+
+        final fun component1(): com.gearui.desktop/SceneEntry // com.gearui.desktop/ResolvedScene.Single.component1|component1(){}[0]
+        final fun copy(com.gearui.desktop/SceneEntry = ...): com.gearui.desktop/ResolvedScene.Single // com.gearui.desktop/ResolvedScene.Single.copy|copy(com.gearui.desktop.SceneEntry){}[0]
+        final fun equals(kotlin/Any?): kotlin/Boolean // com.gearui.desktop/ResolvedScene.Single.equals|equals(kotlin.Any?){}[0]
+        final fun hashCode(): kotlin/Int // com.gearui.desktop/ResolvedScene.Single.hashCode|hashCode(){}[0]
+        final fun toString(): kotlin/String // com.gearui.desktop/ResolvedScene.Single.toString|toString(){}[0]
+    }
+
+    final class Supporting : com.gearui.desktop/ResolvedScene { // com.gearui.desktop/ResolvedScene.Supporting|null[0]
+        constructor <init>(com.gearui.desktop/SceneEntry?, com.gearui.desktop/SceneEntry?, com.gearui.desktop/SceneEntry?) // com.gearui.desktop/ResolvedScene.Supporting.<init>|<init>(com.gearui.desktop.SceneEntry?;com.gearui.desktop.SceneEntry?;com.gearui.desktop.SceneEntry?){}[0]
+
+        final val extra // com.gearui.desktop/ResolvedScene.Supporting.extra|{}extra[0]
+            final fun <get-extra>(): com.gearui.desktop/SceneEntry? // com.gearui.desktop/ResolvedScene.Supporting.extra.<get-extra>|<get-extra>(){}[0]
+        final val main // com.gearui.desktop/ResolvedScene.Supporting.main|{}main[0]
+            final fun <get-main>(): com.gearui.desktop/SceneEntry? // com.gearui.desktop/ResolvedScene.Supporting.main.<get-main>|<get-main>(){}[0]
+        final val supporting // com.gearui.desktop/ResolvedScene.Supporting.supporting|{}supporting[0]
+            final fun <get-supporting>(): com.gearui.desktop/SceneEntry? // com.gearui.desktop/ResolvedScene.Supporting.supporting.<get-supporting>|<get-supporting>(){}[0]
+
+        final fun component1(): com.gearui.desktop/SceneEntry? // com.gearui.desktop/ResolvedScene.Supporting.component1|component1(){}[0]
+        final fun component2(): com.gearui.desktop/SceneEntry? // com.gearui.desktop/ResolvedScene.Supporting.component2|component2(){}[0]
+        final fun component3(): com.gearui.desktop/SceneEntry? // com.gearui.desktop/ResolvedScene.Supporting.component3|component3(){}[0]
+        final fun copy(com.gearui.desktop/SceneEntry? = ..., com.gearui.desktop/SceneEntry? = ..., com.gearui.desktop/SceneEntry? = ...): com.gearui.desktop/ResolvedScene.Supporting // com.gearui.desktop/ResolvedScene.Supporting.copy|copy(com.gearui.desktop.SceneEntry?;com.gearui.desktop.SceneEntry?;com.gearui.desktop.SceneEntry?){}[0]
+        final fun equals(kotlin/Any?): kotlin/Boolean // com.gearui.desktop/ResolvedScene.Supporting.equals|equals(kotlin.Any?){}[0]
+        final fun hashCode(): kotlin/Int // com.gearui.desktop/ResolvedScene.Supporting.hashCode|hashCode(){}[0]
+        final fun toString(): kotlin/String // com.gearui.desktop/ResolvedScene.Supporting.toString|toString(){}[0]
+    }
+}
 
 abstract class com.gearui/View : com.tencent.kuikly.compose/ComposeContainer { // com.gearui/View|null[0]
     constructor <init>() // com.gearui/View.<init>|<init>(){}[0]
@@ -2415,6 +2509,25 @@ final class com.gearui.components.upload/UploadItem { // com.gearui.components.u
     final fun toString(): kotlin/String // com.gearui.components.upload/UploadItem.toString|toString(){}[0]
 }
 
+final class com.gearui.desktop/SceneEntry { // com.gearui.desktop/SceneEntry|null[0]
+    constructor <init>(kotlin/String, kotlin/String, com.gearui.desktop/SceneRole) // com.gearui.desktop/SceneEntry.<init>|<init>(kotlin.String;kotlin.String;com.gearui.desktop.SceneRole){}[0]
+
+    final val key // com.gearui.desktop/SceneEntry.key|{}key[0]
+        final fun <get-key>(): kotlin/String // com.gearui.desktop/SceneEntry.key.<get-key>|<get-key>(){}[0]
+    final val role // com.gearui.desktop/SceneEntry.role|{}role[0]
+        final fun <get-role>(): com.gearui.desktop/SceneRole // com.gearui.desktop/SceneEntry.role.<get-role>|<get-role>(){}[0]
+    final val routeName // com.gearui.desktop/SceneEntry.routeName|{}routeName[0]
+        final fun <get-routeName>(): kotlin/String // com.gearui.desktop/SceneEntry.routeName.<get-routeName>|<get-routeName>(){}[0]
+
+    final fun component1(): kotlin/String // com.gearui.desktop/SceneEntry.component1|component1(){}[0]
+    final fun component2(): kotlin/String // com.gearui.desktop/SceneEntry.component2|component2(){}[0]
+    final fun component3(): com.gearui.desktop/SceneRole // com.gearui.desktop/SceneEntry.component3|component3(){}[0]
+    final fun copy(kotlin/String = ..., kotlin/String = ..., com.gearui.desktop/SceneRole = ...): com.gearui.desktop/SceneEntry // com.gearui.desktop/SceneEntry.copy|copy(kotlin.String;kotlin.String;com.gearui.desktop.SceneRole){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // com.gearui.desktop/SceneEntry.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // com.gearui.desktop/SceneEntry.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // com.gearui.desktop/SceneEntry.toString|toString(){}[0]
+}
+
 final class com.gearui.foundation.avatar/AvatarTokens { // com.gearui.foundation.avatar/AvatarTokens|null[0]
     constructor <init>(com.tencent.kuikly.compose.ui.unit/Dp, com.tencent.kuikly.compose.ui.unit/Dp, kotlin/Int, com.tencent.kuikly.compose.ui.unit/Dp) // com.gearui.foundation.avatar/AvatarTokens.<init>|<init>(com.tencent.kuikly.compose.ui.unit.Dp;com.tencent.kuikly.compose.ui.unit.Dp;kotlin.Int;com.tencent.kuikly.compose.ui.unit.Dp){}[0]
 
@@ -3124,7 +3237,7 @@ final class com.gearui.gestures/SwipeDismissConfig { // com.gearui.gestures/Swip
 }
 
 final class com.gearui.i18n/CommonStrings { // com.gearui.i18n/CommonStrings|null[0]
-    constructor <init>(kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String) // com.gearui.i18n/CommonStrings.<init>|<init>(kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String){}[0]
+    constructor <init>(kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String, kotlin/String) // com.gearui.i18n/CommonStrings.<init>|<init>(kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String){}[0]
 
     final val add // com.gearui.i18n/CommonStrings.add|{}add[0]
         final fun <get-add>(): kotlin/String // com.gearui.i18n/CommonStrings.add.<get-add>|<get-add>(){}[0]
@@ -3144,6 +3257,10 @@ final class com.gearui.i18n/CommonStrings { // com.gearui.i18n/CommonStrings|nul
         final fun <get-loadMoreFailed>(): kotlin/String // com.gearui.i18n/CommonStrings.loadMoreFailed.<get-loadMoreFailed>|<get-loadMoreFailed>(){}[0]
     final val loading // com.gearui.i18n/CommonStrings.loading|{}loading[0]
         final fun <get-loading>(): kotlin/String // com.gearui.i18n/CommonStrings.loading.<get-loading>|<get-loading>(){}[0]
+    final val maximize // com.gearui.i18n/CommonStrings.maximize|{}maximize[0]
+        final fun <get-maximize>(): kotlin/String // com.gearui.i18n/CommonStrings.maximize.<get-maximize>|<get-maximize>(){}[0]
+    final val minimize // com.gearui.i18n/CommonStrings.minimize|{}minimize[0]
+        final fun <get-minimize>(): kotlin/String // com.gearui.i18n/CommonStrings.minimize.<get-minimize>|<get-minimize>(){}[0]
     final val networkError // com.gearui.i18n/CommonStrings.networkError|{}networkError[0]
         final fun <get-networkError>(): kotlin/String // com.gearui.i18n/CommonStrings.networkError.<get-networkError>|<get-networkError>(){}[0]
     final val noData // com.gearui.i18n/CommonStrings.noData|{}noData[0]
@@ -3195,6 +3312,8 @@ final class com.gearui.i18n/CommonStrings { // com.gearui.i18n/CommonStrings|nul
     final fun component23(): kotlin/String // com.gearui.i18n/CommonStrings.component23|component23(){}[0]
     final fun component24(): kotlin/String // com.gearui.i18n/CommonStrings.component24|component24(){}[0]
     final fun component25(): kotlin/String // com.gearui.i18n/CommonStrings.component25|component25(){}[0]
+    final fun component26(): kotlin/String // com.gearui.i18n/CommonStrings.component26|component26(){}[0]
+    final fun component27(): kotlin/String // com.gearui.i18n/CommonStrings.component27|component27(){}[0]
     final fun component3(): kotlin/String // com.gearui.i18n/CommonStrings.component3|component3(){}[0]
     final fun component4(): kotlin/String // com.gearui.i18n/CommonStrings.component4|component4(){}[0]
     final fun component5(): kotlin/String // com.gearui.i18n/CommonStrings.component5|component5(){}[0]
@@ -3202,14 +3321,14 @@ final class com.gearui.i18n/CommonStrings { // com.gearui.i18n/CommonStrings|nul
     final fun component7(): kotlin/String // com.gearui.i18n/CommonStrings.component7|component7(){}[0]
     final fun component8(): kotlin/String // com.gearui.i18n/CommonStrings.component8|component8(){}[0]
     final fun component9(): kotlin/String // com.gearui.i18n/CommonStrings.component9|component9(){}[0]
-    final fun copy(kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ...): com.gearui.i18n/CommonStrings // com.gearui.i18n/CommonStrings.copy|copy(kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String){}[0]
+    final fun copy(kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ..., kotlin/String = ...): com.gearui.i18n/CommonStrings // com.gearui.i18n/CommonStrings.copy|copy(kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String;kotlin.String){}[0]
     final fun equals(kotlin/Any?): kotlin/Boolean // com.gearui.i18n/CommonStrings.equals|equals(kotlin.Any?){}[0]
     final fun hashCode(): kotlin/Int // com.gearui.i18n/CommonStrings.hashCode|hashCode(){}[0]
     final fun toString(): kotlin/String // com.gearui.i18n/CommonStrings.toString|toString(){}[0]
 }
 
 final class com.gearui.i18n/CommonStringsPatch { // com.gearui.i18n/CommonStringsPatch|null[0]
-    constructor <init>(kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ...) // com.gearui.i18n/CommonStringsPatch.<init>|<init>(kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?){}[0]
+    constructor <init>(kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ...) // com.gearui.i18n/CommonStringsPatch.<init>|<init>(kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?){}[0]
 
     final val add // com.gearui.i18n/CommonStringsPatch.add|{}add[0]
         final fun <get-add>(): kotlin/String? // com.gearui.i18n/CommonStringsPatch.add.<get-add>|<get-add>(){}[0]
@@ -3229,6 +3348,10 @@ final class com.gearui.i18n/CommonStringsPatch { // com.gearui.i18n/CommonString
         final fun <get-loadMoreFailed>(): kotlin/String? // com.gearui.i18n/CommonStringsPatch.loadMoreFailed.<get-loadMoreFailed>|<get-loadMoreFailed>(){}[0]
     final val loading // com.gearui.i18n/CommonStringsPatch.loading|{}loading[0]
         final fun <get-loading>(): kotlin/String? // com.gearui.i18n/CommonStringsPatch.loading.<get-loading>|<get-loading>(){}[0]
+    final val maximize // com.gearui.i18n/CommonStringsPatch.maximize|{}maximize[0]
+        final fun <get-maximize>(): kotlin/String? // com.gearui.i18n/CommonStringsPatch.maximize.<get-maximize>|<get-maximize>(){}[0]
+    final val minimize // com.gearui.i18n/CommonStringsPatch.minimize|{}minimize[0]
+        final fun <get-minimize>(): kotlin/String? // com.gearui.i18n/CommonStringsPatch.minimize.<get-minimize>|<get-minimize>(){}[0]
     final val networkError // com.gearui.i18n/CommonStringsPatch.networkError|{}networkError[0]
         final fun <get-networkError>(): kotlin/String? // com.gearui.i18n/CommonStringsPatch.networkError.<get-networkError>|<get-networkError>(){}[0]
     final val noData // com.gearui.i18n/CommonStringsPatch.noData|{}noData[0]
@@ -3280,6 +3403,8 @@ final class com.gearui.i18n/CommonStringsPatch { // com.gearui.i18n/CommonString
     final fun component23(): kotlin/String? // com.gearui.i18n/CommonStringsPatch.component23|component23(){}[0]
     final fun component24(): kotlin/String? // com.gearui.i18n/CommonStringsPatch.component24|component24(){}[0]
     final fun component25(): kotlin/String? // com.gearui.i18n/CommonStringsPatch.component25|component25(){}[0]
+    final fun component26(): kotlin/String? // com.gearui.i18n/CommonStringsPatch.component26|component26(){}[0]
+    final fun component27(): kotlin/String? // com.gearui.i18n/CommonStringsPatch.component27|component27(){}[0]
     final fun component3(): kotlin/String? // com.gearui.i18n/CommonStringsPatch.component3|component3(){}[0]
     final fun component4(): kotlin/String? // com.gearui.i18n/CommonStringsPatch.component4|component4(){}[0]
     final fun component5(): kotlin/String? // com.gearui.i18n/CommonStringsPatch.component5|component5(){}[0]
@@ -3287,7 +3412,7 @@ final class com.gearui.i18n/CommonStringsPatch { // com.gearui.i18n/CommonString
     final fun component7(): kotlin/String? // com.gearui.i18n/CommonStringsPatch.component7|component7(){}[0]
     final fun component8(): kotlin/String? // com.gearui.i18n/CommonStringsPatch.component8|component8(){}[0]
     final fun component9(): kotlin/String? // com.gearui.i18n/CommonStringsPatch.component9|component9(){}[0]
-    final fun copy(kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ...): com.gearui.i18n/CommonStringsPatch // com.gearui.i18n/CommonStringsPatch.copy|copy(kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?){}[0]
+    final fun copy(kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ...): com.gearui.i18n/CommonStringsPatch // com.gearui.i18n/CommonStringsPatch.copy|copy(kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?){}[0]
     final fun equals(kotlin/Any?): kotlin/Boolean // com.gearui.i18n/CommonStringsPatch.equals|equals(kotlin.Any?){}[0]
     final fun hashCode(): kotlin/Int // com.gearui.i18n/CommonStringsPatch.hashCode|hashCode(){}[0]
     final fun toString(): kotlin/String // com.gearui.i18n/CommonStringsPatch.toString|toString(){}[0]
@@ -4266,6 +4391,19 @@ final class com.gearui.runtime/SafeArea { // com.gearui.runtime/SafeArea|null[0]
     final fun equals(kotlin/Any?): kotlin/Boolean // com.gearui.runtime/SafeArea.equals|equals(kotlin.Any?){}[0]
     final fun hashCode(): kotlin/Int // com.gearui.runtime/SafeArea.hashCode|hashCode(){}[0]
     final fun toString(): kotlin/String // com.gearui.runtime/SafeArea.toString|toString(){}[0]
+}
+
+final class com.gearui.runtime/SceneClaims { // com.gearui.runtime/SceneClaims|null[0]
+    constructor <init>(kotlin/Boolean = ...) // com.gearui.runtime/SceneClaims.<init>|<init>(kotlin.Boolean){}[0]
+
+    final val hideBack // com.gearui.runtime/SceneClaims.hideBack|{}hideBack[0]
+        final fun <get-hideBack>(): kotlin/Boolean // com.gearui.runtime/SceneClaims.hideBack.<get-hideBack>|<get-hideBack>(){}[0]
+
+    final fun component1(): kotlin/Boolean // com.gearui.runtime/SceneClaims.component1|component1(){}[0]
+    final fun copy(kotlin/Boolean = ...): com.gearui.runtime/SceneClaims // com.gearui.runtime/SceneClaims.copy|copy(kotlin.Boolean){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // com.gearui.runtime/SceneClaims.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // com.gearui.runtime/SceneClaims.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // com.gearui.runtime/SceneClaims.toString|toString(){}[0]
 }
 
 final class com.gearui.theme/Colors { // com.gearui.theme/Colors|null[0]
@@ -8418,6 +8556,11 @@ final val com.gearui.components.togglebutton/com_gearui_components_togglebutton_
 final val com.gearui.components.tour/com_gearui_components_tour_TourState$stableprop // com.gearui.components.tour/com_gearui_components_tour_TourState$stableprop|#static{}com_gearui_components_tour_TourState$stableprop[0]
 final val com.gearui.components.tour/com_gearui_components_tour_TourStep$stableprop // com.gearui.components.tour/com_gearui_components_tour_TourStep$stableprop|#static{}com_gearui_components_tour_TourStep$stableprop[0]
 final val com.gearui.components.upload/com_gearui_components_upload_UploadItem$stableprop // com.gearui.components.upload/com_gearui_components_upload_UploadItem$stableprop|#static{}com_gearui_components_upload_UploadItem$stableprop[0]
+final val com.gearui.desktop/com_gearui_desktop_DesktopWindowCommands$stableprop // com.gearui.desktop/com_gearui_desktop_DesktopWindowCommands$stableprop|#static{}com_gearui_desktop_DesktopWindowCommands$stableprop[0]
+final val com.gearui.desktop/com_gearui_desktop_ResolvedScene_ListDetail$stableprop // com.gearui.desktop/com_gearui_desktop_ResolvedScene_ListDetail$stableprop|#static{}com_gearui_desktop_ResolvedScene_ListDetail$stableprop[0]
+final val com.gearui.desktop/com_gearui_desktop_ResolvedScene_Single$stableprop // com.gearui.desktop/com_gearui_desktop_ResolvedScene_Single$stableprop|#static{}com_gearui_desktop_ResolvedScene_Single$stableprop[0]
+final val com.gearui.desktop/com_gearui_desktop_ResolvedScene_Supporting$stableprop // com.gearui.desktop/com_gearui_desktop_ResolvedScene_Supporting$stableprop|#static{}com_gearui_desktop_ResolvedScene_Supporting$stableprop[0]
+final val com.gearui.desktop/com_gearui_desktop_SceneEntry$stableprop // com.gearui.desktop/com_gearui_desktop_SceneEntry$stableprop|#static{}com_gearui_desktop_SceneEntry$stableprop[0]
 final val com.gearui.foundation.animation/com_gearui_foundation_animation_Animation$stableprop // com.gearui.foundation.animation/com_gearui_foundation_animation_Animation$stableprop|#static{}com_gearui_foundation_animation_Animation$stableprop[0]
 final val com.gearui.foundation.animation/com_gearui_foundation_animation_AnimationCombination$stableprop // com.gearui.foundation.animation/com_gearui_foundation_animation_AnimationCombination$stableprop|#static{}com_gearui_foundation_animation_AnimationCombination$stableprop[0]
 final val com.gearui.foundation.animation/com_gearui_foundation_animation_AnimationDelay$stableprop // com.gearui.foundation.animation/com_gearui_foundation_animation_AnimationDelay$stableprop|#static{}com_gearui_foundation_animation_AnimationDelay$stableprop[0]
@@ -8583,12 +8726,15 @@ final val com.gearui.i18n/isEmpty // com.gearui.i18n/isEmpty|@com.gearui.i18n.St
     final fun (com.gearui.i18n/StringsPatch).<get-isEmpty>(): kotlin/Boolean // com.gearui.i18n/isEmpty.<get-isEmpty>|<get-isEmpty>@com.gearui.i18n.StringsPatch(){}[0]
 final val com.gearui.i18n/isEmpty // com.gearui.i18n/isEmpty|@com.gearui.i18n.ThemeStringsPatch{}isEmpty[0]
     final fun (com.gearui.i18n/ThemeStringsPatch).<get-isEmpty>(): kotlin/Boolean // com.gearui.i18n/isEmpty.<get-isEmpty>|<get-isEmpty>@com.gearui.i18n.ThemeStringsPatch(){}[0]
+final val com.gearui.navigation/com_gearui_navigation_ColumnLayout$stableprop // com.gearui.navigation/com_gearui_navigation_ColumnLayout$stableprop|#static{}com_gearui_navigation_ColumnLayout$stableprop[0]
 final val com.gearui.navigation/com_gearui_navigation_NavEntry$stableprop // com.gearui.navigation/com_gearui_navigation_NavEntry$stableprop|#static{}com_gearui_navigation_NavEntry$stableprop[0]
 final val com.gearui.navigation/com_gearui_navigation_NavLayer$stableprop // com.gearui.navigation/com_gearui_navigation_NavLayer$stableprop|#static{}com_gearui_navigation_NavLayer$stableprop[0]
 final val com.gearui.navigation/com_gearui_navigation_NavOptions$stableprop // com.gearui.navigation/com_gearui_navigation_NavOptions$stableprop|#static{}com_gearui_navigation_NavOptions$stableprop[0]
 final val com.gearui.navigation/com_gearui_navigation_NavigatorState$stableprop // com.gearui.navigation/com_gearui_navigation_NavigatorState$stableprop|#static{}com_gearui_navigation_NavigatorState$stableprop[0]
 final val com.gearui.navigation/com_gearui_navigation_RetainedEntry$stableprop // com.gearui.navigation/com_gearui_navigation_RetainedEntry$stableprop|#static{}com_gearui_navigation_RetainedEntry$stableprop[0]
 final val com.gearui.navigation/com_gearui_navigation_RetainedEntryStore$stableprop // com.gearui.navigation/com_gearui_navigation_RetainedEntryStore$stableprop|#static{}com_gearui_navigation_RetainedEntryStore$stableprop[0]
+final val com.gearui.navigation/com_gearui_navigation_SceneColumn_Entry$stableprop // com.gearui.navigation/com_gearui_navigation_SceneColumn_Entry$stableprop|#static{}com_gearui_navigation_SceneColumn_Entry$stableprop[0]
+final val com.gearui.navigation/com_gearui_navigation_SceneColumn_Placeholder$stableprop // com.gearui.navigation/com_gearui_navigation_SceneColumn_Placeholder$stableprop|#static{}com_gearui_navigation_SceneColumn_Placeholder$stableprop[0]
 final val com.gearui.overlay/LocalInputBlockedByOverlay // com.gearui.overlay/LocalInputBlockedByOverlay|{}LocalInputBlockedByOverlay[0]
     final fun <get-LocalInputBlockedByOverlay>(): androidx.compose.runtime/ProvidableCompositionLocal<kotlin/Boolean> // com.gearui.overlay/LocalInputBlockedByOverlay.<get-LocalInputBlockedByOverlay>|<get-LocalInputBlockedByOverlay>(){}[0]
 final val com.gearui.overlay/LocalOverlayController // com.gearui.overlay/LocalOverlayController|{}LocalOverlayController[0]
@@ -8607,12 +8753,17 @@ final val com.gearui.runtime/LocalRuntimeEnvironment // com.gearui.runtime/Local
     final fun <get-LocalRuntimeEnvironment>(): androidx.compose.runtime/ProvidableCompositionLocal<com.gearui.runtime/RuntimeEnvironment> // com.gearui.runtime/LocalRuntimeEnvironment.<get-LocalRuntimeEnvironment>|<get-LocalRuntimeEnvironment>(){}[0]
 final val com.gearui.runtime/LocalRuntimeFlags // com.gearui.runtime/LocalRuntimeFlags|{}LocalRuntimeFlags[0]
     final fun <get-LocalRuntimeFlags>(): androidx.compose.runtime/ProvidableCompositionLocal<com.gearui.runtime/RuntimeFlags> // com.gearui.runtime/LocalRuntimeFlags.<get-LocalRuntimeFlags>|<get-LocalRuntimeFlags>(){}[0]
+final val com.gearui.runtime/LocalSceneClaims // com.gearui.runtime/LocalSceneClaims|{}LocalSceneClaims[0]
+    final fun <get-LocalSceneClaims>(): androidx.compose.runtime/ProvidableCompositionLocal<com.gearui.runtime/SceneClaims> // com.gearui.runtime/LocalSceneClaims.<get-LocalSceneClaims>|<get-LocalSceneClaims>(){}[0]
+final val com.gearui.runtime/LocalScenePlaceholder // com.gearui.runtime/LocalScenePlaceholder|{}LocalScenePlaceholder[0]
+    final fun <get-LocalScenePlaceholder>(): androidx.compose.runtime/ProvidableCompositionLocal<kotlin/Function2<androidx.compose.runtime/Composer, kotlin/Int, kotlin/Unit>> // com.gearui.runtime/LocalScenePlaceholder.<get-LocalScenePlaceholder>|<get-LocalScenePlaceholder>(){}[0]
 final val com.gearui.runtime/com_gearui_runtime_KeyboardInset$stableprop // com.gearui.runtime/com_gearui_runtime_KeyboardInset$stableprop|#static{}com_gearui_runtime_KeyboardInset$stableprop[0]
 final val com.gearui.runtime/com_gearui_runtime_RuntimeEnvironment$stableprop // com.gearui.runtime/com_gearui_runtime_RuntimeEnvironment$stableprop|#static{}com_gearui_runtime_RuntimeEnvironment$stableprop[0]
 final val com.gearui.runtime/com_gearui_runtime_RuntimeFlags$stableprop // com.gearui.runtime/com_gearui_runtime_RuntimeFlags$stableprop|#static{}com_gearui_runtime_RuntimeFlags$stableprop[0]
 final val com.gearui.runtime/com_gearui_runtime_RuntimeInsetsBridge$stableprop // com.gearui.runtime/com_gearui_runtime_RuntimeInsetsBridge$stableprop|#static{}com_gearui_runtime_RuntimeInsetsBridge$stableprop[0]
 final val com.gearui.runtime/com_gearui_runtime_SafeArea$stableprop // com.gearui.runtime/com_gearui_runtime_SafeArea$stableprop|#static{}com_gearui_runtime_SafeArea$stableprop[0]
 final val com.gearui.runtime/com_gearui_runtime_SafeAreaStabilizer$stableprop // com.gearui.runtime/com_gearui_runtime_SafeAreaStabilizer$stableprop|#static{}com_gearui_runtime_SafeAreaStabilizer$stableprop[0]
+final val com.gearui.runtime/com_gearui_runtime_SceneClaims$stableprop // com.gearui.runtime/com_gearui_runtime_SceneClaims$stableprop|#static{}com_gearui_runtime_SceneClaims$stableprop[0]
 final val com.gearui.system/LocalStatusBarController // com.gearui.system/LocalStatusBarController|{}LocalStatusBarController[0]
     final fun <get-LocalStatusBarController>(): androidx.compose.runtime/ProvidableCompositionLocal<com.gearui.system/StatusBarController> // com.gearui.system/LocalStatusBarController.<get-LocalStatusBarController>|<get-LocalStatusBarController>(){}[0]
 final val com.gearui.system/com_gearui_system_NoOpStatusBarController$stableprop // com.gearui.system/com_gearui_system_NoOpStatusBarController$stableprop|#static{}com_gearui_system_NoOpStatusBarController$stableprop[0]
@@ -8698,6 +8849,7 @@ final fun (com.tencent.kuikly.compose.ui/Modifier).com.gearui.gestures/ownsHoriz
 final fun (com.tencent.kuikly.compose.ui/Modifier).com.gearui.gestures/swipeBack(kotlin/Boolean = ..., com.gearui.gestures/SwipeBackConfig = ..., kotlin/Function1<com.tencent.kuikly.compose.ui.geometry/Offset, kotlin/Boolean> = ..., kotlin/Function0<kotlin/Boolean> = ..., kotlin/Function0<kotlin/Unit>? = ..., kotlin/Function2<kotlin/Float, kotlin/Float, kotlin/Unit>? = ..., kotlin/Function0<kotlin/Unit>? = ..., kotlin/Function0<kotlin/Unit>): com.tencent.kuikly.compose.ui/Modifier // com.gearui.gestures/swipeBack|swipeBack@com.tencent.kuikly.compose.ui.Modifier(kotlin.Boolean;com.gearui.gestures.SwipeBackConfig;kotlin.Function1<com.tencent.kuikly.compose.ui.geometry.Offset,kotlin.Boolean>;kotlin.Function0<kotlin.Boolean>;kotlin.Function0<kotlin.Unit>?;kotlin.Function2<kotlin.Float,kotlin.Float,kotlin.Unit>?;kotlin.Function0<kotlin.Unit>?;kotlin.Function0<kotlin.Unit>){}[0]
 final fun (com.tencent.kuikly.compose.ui/Modifier).com.gearui.gestures/swipeDismiss(com.gearui.gestures/DismissDirection = ..., kotlin/Boolean = ..., com.gearui.gestures/SwipeDismissConfig = ..., kotlin/Any? = ..., kotlin/Function0<kotlin/Unit>? = ..., kotlin/Function2<kotlin/Float, kotlin/Float, kotlin/Unit>? = ..., kotlin/Function0<kotlin/Unit>? = ..., kotlin/Function0<kotlin/Unit>): com.tencent.kuikly.compose.ui/Modifier // com.gearui.gestures/swipeDismiss|swipeDismiss@com.tencent.kuikly.compose.ui.Modifier(com.gearui.gestures.DismissDirection;kotlin.Boolean;com.gearui.gestures.SwipeDismissConfig;kotlin.Any?;kotlin.Function0<kotlin.Unit>?;kotlin.Function2<kotlin.Float,kotlin.Float,kotlin.Unit>?;kotlin.Function0<kotlin.Unit>?;kotlin.Function0<kotlin.Unit>){}[0]
 final fun (kotlin/String).com.gearui.i18n/formatArgs(kotlin/Array<out kotlin/Pair<kotlin/String, kotlin/Any?>>...): kotlin/String // com.gearui.i18n/formatArgs|formatArgs@kotlin.String(kotlin.Array<out|kotlin.Pair<kotlin.String,kotlin.Any?>>...){}[0]
+final fun <#A: com.gearui.navigation/NavRoute> com.gearui.desktop/DesktopShell(com.gearui.navigation/NavigatorController<#A>, kotlin/Function1<#A, com.gearui.desktop/SceneRole>, com.gearui.desktop/SceneKind?, kotlin.collections/List<com.gearui.components.bottomnavbar/BottomNavItem>?, kotlin/String?, kotlin/Function1<kotlin/String, kotlin/Unit>?, kotlin/Int?, com.gearui.desktop/DesktopChrome?, kotlin/Boolean, com.tencent.kuikly.compose.ui/Modifier?, kotlin/String?, kotlin/Function2<androidx.compose.runtime/Composer, kotlin/Int, kotlin/Unit>?, kotlin/Function4<com.gearui.navigation/EntryScope<#A>, com.gearui.navigation/NavEntry<#A>, androidx.compose.runtime/Composer, kotlin/Int, kotlin/Unit>, androidx.compose.runtime/Composer?, kotlin/Int, kotlin/Int, kotlin/Int) // com.gearui.desktop/DesktopShell|DesktopShell(com.gearui.navigation.NavigatorController<0:0>;kotlin.Function1<0:0,com.gearui.desktop.SceneRole>;com.gearui.desktop.SceneKind?;kotlin.collections.List<com.gearui.components.bottomnavbar.BottomNavItem>?;kotlin.String?;kotlin.Function1<kotlin.String,kotlin.Unit>?;kotlin.Int?;com.gearui.desktop.DesktopChrome?;kotlin.Boolean;com.tencent.kuikly.compose.ui.Modifier?;kotlin.String?;kotlin.Function2<androidx.compose.runtime.Composer,kotlin.Int,kotlin.Unit>?;kotlin.Function4<com.gearui.navigation.EntryScope<0:0>,com.gearui.navigation.NavEntry<0:0>,androidx.compose.runtime.Composer,kotlin.Int,kotlin.Unit>;androidx.compose.runtime.Composer?;kotlin.Int;kotlin.Int;kotlin.Int){0§<com.gearui.navigation.NavRoute>}[0]
 final fun <#A: com.gearui.navigation/NavRoute> com.gearui.navigation/Navigator(#A, com.tencent.kuikly.compose.ui/Modifier?, kotlin/Boolean, kotlin/Boolean, kotlin/Function1<com.gearui.navigation/NavEntry<#A>, kotlin/Unit>?, kotlin/Function4<com.gearui.navigation/EntryScope<#A>, com.gearui.navigation/NavEntry<#A>, androidx.compose.runtime/Composer, kotlin/Int, kotlin/Unit>, androidx.compose.runtime/Composer?, kotlin/Int, kotlin/Int) // com.gearui.navigation/Navigator|Navigator(0:0;com.tencent.kuikly.compose.ui.Modifier?;kotlin.Boolean;kotlin.Boolean;kotlin.Function1<com.gearui.navigation.NavEntry<0:0>,kotlin.Unit>?;kotlin.Function4<com.gearui.navigation.EntryScope<0:0>,com.gearui.navigation.NavEntry<0:0>,androidx.compose.runtime.Composer,kotlin.Int,kotlin.Unit>;androidx.compose.runtime.Composer?;kotlin.Int;kotlin.Int){0§<com.gearui.navigation.NavRoute>}[0]
 final fun <#A: com.gearui.navigation/NavRoute> com.gearui.navigation/Navigator(com.gearui.navigation/NavigatorController<#A>, com.tencent.kuikly.compose.ui/Modifier?, kotlin/Boolean, kotlin/Boolean, kotlin/Function1<com.gearui.navigation/NavEntry<#A>, kotlin/Unit>?, kotlin/Function4<com.gearui.navigation/EntryScope<#A>, com.gearui.navigation/NavEntry<#A>, androidx.compose.runtime/Composer, kotlin/Int, kotlin/Unit>, androidx.compose.runtime/Composer?, kotlin/Int, kotlin/Int) // com.gearui.navigation/Navigator|Navigator(com.gearui.navigation.NavigatorController<0:0>;com.tencent.kuikly.compose.ui.Modifier?;kotlin.Boolean;kotlin.Boolean;kotlin.Function1<com.gearui.navigation.NavEntry<0:0>,kotlin.Unit>?;kotlin.Function4<com.gearui.navigation.EntryScope<0:0>,com.gearui.navigation.NavEntry<0:0>,androidx.compose.runtime.Composer,kotlin.Int,kotlin.Unit>;androidx.compose.runtime.Composer?;kotlin.Int;kotlin.Int){0§<com.gearui.navigation.NavRoute>}[0]
 final fun <#A: com.gearui.navigation/NavRoute> com.gearui.navigation/rememberNavigatorController(#A, androidx.compose.runtime/Composer?, kotlin/Int): com.gearui.navigation/NavigatorController<#A> // com.gearui.navigation/rememberNavigatorController|rememberNavigatorController(0:0;androidx.compose.runtime.Composer?;kotlin.Int){0§<com.gearui.navigation.NavRoute>}[0]
@@ -8972,6 +9124,14 @@ final fun com.gearui.compose/TextButton(kotlin/String, kotlin/Function0<kotlin/U
 final fun com.gearui.compose/TitleLarge(kotlin/String, com.tencent.kuikly.compose.ui/Modifier?, androidx.compose.runtime/Composer?, kotlin/Int, kotlin/Int) // com.gearui.compose/TitleLarge|TitleLarge(kotlin.String;com.tencent.kuikly.compose.ui.Modifier?;androidx.compose.runtime.Composer?;kotlin.Int;kotlin.Int){}[0]
 final fun com.gearui.compose/TitleMedium(kotlin/String, com.tencent.kuikly.compose.ui/Modifier?, androidx.compose.runtime/Composer?, kotlin/Int, kotlin/Int) // com.gearui.compose/TitleMedium|TitleMedium(kotlin.String;com.tencent.kuikly.compose.ui.Modifier?;androidx.compose.runtime.Composer?;kotlin.Int;kotlin.Int){}[0]
 final fun com.gearui.compose/WarningButton(kotlin/String, kotlin/Function0<kotlin/Unit>?, com.tencent.kuikly.compose.ui/Modifier?, androidx.compose.runtime/Composer?, kotlin/Int, kotlin/Int) // com.gearui.compose/WarningButton|WarningButton(kotlin.String;kotlin.Function0<kotlin.Unit>?;com.tencent.kuikly.compose.ui.Modifier?;androidx.compose.runtime.Composer?;kotlin.Int;kotlin.Int){}[0]
+final fun com.gearui.desktop/com_gearui_desktop_DesktopWindowCommands$stableprop_getter(): kotlin/Int // com.gearui.desktop/com_gearui_desktop_DesktopWindowCommands$stableprop_getter|com_gearui_desktop_DesktopWindowCommands$stableprop_getter(){}[0]
+final fun com.gearui.desktop/com_gearui_desktop_ResolvedScene_ListDetail$stableprop_getter(): kotlin/Int // com.gearui.desktop/com_gearui_desktop_ResolvedScene_ListDetail$stableprop_getter|com_gearui_desktop_ResolvedScene_ListDetail$stableprop_getter(){}[0]
+final fun com.gearui.desktop/com_gearui_desktop_ResolvedScene_Single$stableprop_getter(): kotlin/Int // com.gearui.desktop/com_gearui_desktop_ResolvedScene_Single$stableprop_getter|com_gearui_desktop_ResolvedScene_Single$stableprop_getter(){}[0]
+final fun com.gearui.desktop/com_gearui_desktop_ResolvedScene_Supporting$stableprop_getter(): kotlin/Int // com.gearui.desktop/com_gearui_desktop_ResolvedScene_Supporting$stableprop_getter|com_gearui_desktop_ResolvedScene_Supporting$stableprop_getter(){}[0]
+final fun com.gearui.desktop/com_gearui_desktop_SceneEntry$stableprop_getter(): kotlin/Int // com.gearui.desktop/com_gearui_desktop_SceneEntry$stableprop_getter|com_gearui_desktop_SceneEntry$stableprop_getter(){}[0]
+final fun com.gearui.desktop/partitionsForWidth(kotlin/Float): kotlin/Int // com.gearui.desktop/partitionsForWidth|partitionsForWidth(kotlin.Float){}[0]
+final fun com.gearui.desktop/resolveScene(kotlin.collections/List<com.gearui.desktop/SceneEntry>, kotlin/Int, com.gearui.desktop/SceneKind): com.gearui.desktop/ResolvedScene // com.gearui.desktop/resolveScene|resolveScene(kotlin.collections.List<com.gearui.desktop.SceneEntry>;kotlin.Int;com.gearui.desktop.SceneKind){}[0]
+final fun com.gearui.desktop/scaffoldSignature(com.gearui.desktop/ResolvedScene): kotlin/String // com.gearui.desktop/scaffoldSignature|scaffoldSignature(com.gearui.desktop.ResolvedScene){}[0]
 final fun com.gearui.foundation.animation/com_gearui_foundation_animation_Animation$stableprop_getter(): kotlin/Int // com.gearui.foundation.animation/com_gearui_foundation_animation_Animation$stableprop_getter|com_gearui_foundation_animation_Animation$stableprop_getter(){}[0]
 final fun com.gearui.foundation.animation/com_gearui_foundation_animation_AnimationCombination$stableprop_getter(): kotlin/Int // com.gearui.foundation.animation/com_gearui_foundation_animation_AnimationCombination$stableprop_getter|com_gearui_foundation_animation_AnimationCombination$stableprop_getter(){}[0]
 final fun com.gearui.foundation.animation/com_gearui_foundation_animation_AnimationDelay$stableprop_getter(): kotlin/Int // com.gearui.foundation.animation/com_gearui_foundation_animation_AnimationDelay$stableprop_getter|com_gearui_foundation_animation_AnimationDelay$stableprop_getter(){}[0]
@@ -9121,12 +9281,15 @@ final fun com.gearui.i18n/com_gearui_i18n_ThemeStrings$stableprop_getter(): kotl
 final fun com.gearui.i18n/com_gearui_i18n_ThemeStringsPatch$stableprop_getter(): kotlin/Int // com.gearui.i18n/com_gearui_i18n_ThemeStringsPatch$stableprop_getter|com_gearui_i18n_ThemeStringsPatch$stableprop_getter(){}[0]
 final fun com.gearui.i18n/normalizeLanguageTag(kotlin/String): kotlin/String // com.gearui.i18n/normalizeLanguageTag|normalizeLanguageTag(kotlin.String){}[0]
 final fun com.gearui.navigation/TabHost(kotlin/Int, kotlin/Int, com.tencent.kuikly.compose.ui/Modifier?, kotlin/Function3<kotlin/Int, androidx.compose.runtime/Composer, kotlin/Int, kotlin/Unit>, androidx.compose.runtime/Composer?, kotlin/Int, kotlin/Int) // com.gearui.navigation/TabHost|TabHost(kotlin.Int;kotlin.Int;com.tencent.kuikly.compose.ui.Modifier?;kotlin.Function3<kotlin.Int,androidx.compose.runtime.Composer,kotlin.Int,kotlin.Unit>;androidx.compose.runtime.Composer?;kotlin.Int;kotlin.Int){}[0]
+final fun com.gearui.navigation/com_gearui_navigation_ColumnLayout$stableprop_getter(): kotlin/Int // com.gearui.navigation/com_gearui_navigation_ColumnLayout$stableprop_getter|com_gearui_navigation_ColumnLayout$stableprop_getter(){}[0]
 final fun com.gearui.navigation/com_gearui_navigation_NavEntry$stableprop_getter(): kotlin/Int // com.gearui.navigation/com_gearui_navigation_NavEntry$stableprop_getter|com_gearui_navigation_NavEntry$stableprop_getter(){}[0]
 final fun com.gearui.navigation/com_gearui_navigation_NavLayer$stableprop_getter(): kotlin/Int // com.gearui.navigation/com_gearui_navigation_NavLayer$stableprop_getter|com_gearui_navigation_NavLayer$stableprop_getter(){}[0]
 final fun com.gearui.navigation/com_gearui_navigation_NavOptions$stableprop_getter(): kotlin/Int // com.gearui.navigation/com_gearui_navigation_NavOptions$stableprop_getter|com_gearui_navigation_NavOptions$stableprop_getter(){}[0]
 final fun com.gearui.navigation/com_gearui_navigation_NavigatorState$stableprop_getter(): kotlin/Int // com.gearui.navigation/com_gearui_navigation_NavigatorState$stableprop_getter|com_gearui_navigation_NavigatorState$stableprop_getter(){}[0]
 final fun com.gearui.navigation/com_gearui_navigation_RetainedEntry$stableprop_getter(): kotlin/Int // com.gearui.navigation/com_gearui_navigation_RetainedEntry$stableprop_getter|com_gearui_navigation_RetainedEntry$stableprop_getter(){}[0]
 final fun com.gearui.navigation/com_gearui_navigation_RetainedEntryStore$stableprop_getter(): kotlin/Int // com.gearui.navigation/com_gearui_navigation_RetainedEntryStore$stableprop_getter|com_gearui_navigation_RetainedEntryStore$stableprop_getter(){}[0]
+final fun com.gearui.navigation/com_gearui_navigation_SceneColumn_Entry$stableprop_getter(): kotlin/Int // com.gearui.navigation/com_gearui_navigation_SceneColumn_Entry$stableprop_getter|com_gearui_navigation_SceneColumn_Entry$stableprop_getter(){}[0]
+final fun com.gearui.navigation/com_gearui_navigation_SceneColumn_Placeholder$stableprop_getter(): kotlin/Int // com.gearui.navigation/com_gearui_navigation_SceneColumn_Placeholder$stableprop_getter|com_gearui_navigation_SceneColumn_Placeholder$stableprop_getter(){}[0]
 final fun com.gearui.overlay/OverlayHost(com.gearui.overlay/OverlayController, kotlin/Function2<androidx.compose.runtime/Composer, kotlin/Int, kotlin/Unit>, androidx.compose.runtime/Composer?, kotlin/Int) // com.gearui.overlay/OverlayHost|OverlayHost(com.gearui.overlay.OverlayController;kotlin.Function2<androidx.compose.runtime.Composer,kotlin.Int,kotlin.Unit>;androidx.compose.runtime.Composer?;kotlin.Int){}[0]
 final fun com.gearui.overlay/OverlayRoot(kotlin/Function2<androidx.compose.runtime/Composer, kotlin/Int, kotlin/Unit>, androidx.compose.runtime/Composer?, kotlin/Int) // com.gearui.overlay/OverlayRoot|OverlayRoot(kotlin.Function2<androidx.compose.runtime.Composer,kotlin.Int,kotlin.Unit>;androidx.compose.runtime.Composer?;kotlin.Int){}[0]
 final fun com.gearui.overlay/com_gearui_overlay_AnchoredEntryMotion$stableprop_getter(): kotlin/Int // com.gearui.overlay/com_gearui_overlay_AnchoredEntryMotion$stableprop_getter|com_gearui_overlay_AnchoredEntryMotion$stableprop_getter(){}[0]
@@ -9163,6 +9326,7 @@ final fun com.gearui.runtime/com_gearui_runtime_RuntimeFlags$stableprop_getter()
 final fun com.gearui.runtime/com_gearui_runtime_RuntimeInsetsBridge$stableprop_getter(): kotlin/Int // com.gearui.runtime/com_gearui_runtime_RuntimeInsetsBridge$stableprop_getter|com_gearui_runtime_RuntimeInsetsBridge$stableprop_getter(){}[0]
 final fun com.gearui.runtime/com_gearui_runtime_SafeArea$stableprop_getter(): kotlin/Int // com.gearui.runtime/com_gearui_runtime_SafeArea$stableprop_getter|com_gearui_runtime_SafeArea$stableprop_getter(){}[0]
 final fun com.gearui.runtime/com_gearui_runtime_SafeAreaStabilizer$stableprop_getter(): kotlin/Int // com.gearui.runtime/com_gearui_runtime_SafeAreaStabilizer$stableprop_getter|com_gearui_runtime_SafeAreaStabilizer$stableprop_getter(){}[0]
+final fun com.gearui.runtime/com_gearui_runtime_SceneClaims$stableprop_getter(): kotlin/Int // com.gearui.runtime/com_gearui_runtime_SceneClaims$stableprop_getter|com_gearui_runtime_SceneClaims$stableprop_getter(){}[0]
 final fun com.gearui.system/com_gearui_system_NoOpStatusBarController$stableprop_getter(): kotlin/Int // com.gearui.system/com_gearui_system_NoOpStatusBarController$stableprop_getter|com_gearui_system_NoOpStatusBarController$stableprop_getter(){}[0]
 final fun com.gearui.theme/ProvideSystemDarkMode(kotlin/Boolean, kotlin/Function2<androidx.compose.runtime/Composer, kotlin/Int, kotlin/Unit>, androidx.compose.runtime/Composer?, kotlin/Int) // com.gearui.theme/ProvideSystemDarkMode|ProvideSystemDarkMode(kotlin.Boolean;kotlin.Function2<androidx.compose.runtime.Composer,kotlin.Int,kotlin.Unit>;androidx.compose.runtime.Composer?;kotlin.Int){}[0]
 final fun com.gearui.theme/Theme(com.gearui.theme/ThemeMode?, com.gearui.theme/ThemeSpec?, com.gearui.theme/Typography?, com.gearui.theme/Shapes?, com.gearui.foundation.elevation/Elevation?, com.gearui.foundation.motion/Motion?, kotlin/Function2<androidx.compose.runtime/Composer, kotlin/Int, kotlin/Unit>, androidx.compose.runtime/Composer?, kotlin/Int, kotlin/Int) // com.gearui.theme/Theme|Theme(com.gearui.theme.ThemeMode?;com.gearui.theme.ThemeSpec?;com.gearui.theme.Typography?;com.gearui.theme.Shapes?;com.gearui.foundation.elevation.Elevation?;com.gearui.foundation.motion.Motion?;kotlin.Function2<androidx.compose.runtime.Composer,kotlin.Int,kotlin.Unit>;androidx.compose.runtime.Composer?;kotlin.Int;kotlin.Int){}[0]

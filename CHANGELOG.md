@@ -11,6 +11,20 @@
   a page is still arriving settles that page first instead of being refused, so a deep
   link pushing two pages or a back tapped at once is not lost. Without an animation scope
   (tests, a controller used outside composition) a push stays immediate.
+- `DesktopShell` lays a wide window out with the same `Navigator` a phone uses.
+  List-detail is the default: below 600 the window shows only the top entry, from
+  600 that entry's predecessor sits beside it, and a third pane needs 1200 plus an
+  extra entry actually on the stack. The supporting pane is the peer layout; it
+  has no empty column and yields on a phone. The sidebar is the bottom bar, not a
+  scene column. Mac draws a gutter for the host's traffic lights and does not
+  paint them; Windows draws caption buttons that call the host (a no-op on the
+  phone targets). Pass `systemTitleBar` when the operating-system window already
+  has that chrome. `desktop/windows` is a real window (title bar, resize, caption
+  buttons are Windows). `desktop/macos` is the AppKit counterpart; it was not
+  launched here. Kuikly has no Windows renderer, so the Windows host draws
+  GearUI in the client area. Back pops one entry, not every entry that leaves
+  the panes unchanged. `CommonStrings` gains `minimize` and `maximize` (a
+  constructor change).
 
 - A formatted `Input` (`InputFormat.ChinaMobile`, `BankCard`, `IdCard`) no longer drops
   characters typed faster than a hand types them — a barcode or card reader acting as a

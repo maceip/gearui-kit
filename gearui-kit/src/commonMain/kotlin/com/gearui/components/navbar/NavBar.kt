@@ -23,6 +23,7 @@ import com.gearui.components.icon.Icons
 import com.gearui.foundation.primitives.Icon
 import com.gearui.foundation.primitives.Text
 import com.gearui.runtime.LocalRuntimeFlags
+import com.gearui.runtime.LocalSceneClaims
 import com.gearui.foundation.material.MaterialSurface
 import com.gearui.foundation.material.Materials
 import com.gearui.theme.Theme
@@ -76,6 +77,9 @@ fun NavBar(
     showBottomDivider: Boolean = true
 ) {
     val colors = Theme.colors
+    // A column that already shows the previous entry has claimed the back button.
+    // The scene still passes one; it is not drawn. System back still pops.
+    val showBack = useDefaultBack && !LocalSceneClaims.current.hideBack
     // Defaults to the page background: in dark themes surface (#121212) is one step lighter than
     // background (#0A0A0A), which paints a visible band across the top that does not meet the status bar. In light themes both are white, invisible.
     // surface, not background: the bottom navigation bar already defaults to surface,
@@ -120,7 +124,7 @@ fun NavBar(
                     .padding(horizontal = ControlGeometry.navBarEdgeInset)
             ) {
                 // Upper layer: left action area
-                val leftCount = (if (useDefaultBack) 1 else 0) + leftItems.size
+                val leftCount = (if (showBack) 1 else 0) + leftItems.size
                 val rightCount = rightItems.size
                 // Padding beside the title: the larger of the two action areas, so the centred title is never covered
                 val leftSlotWidth = when {
@@ -177,7 +181,7 @@ fun NavBar(
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.Start
                 ) {
-                    if (useDefaultBack) {
+                    if (showBack) {
                         NavBarIconButton(
                             icon = Icons.caretLeft,
                             iconColor = textColor,
@@ -245,7 +249,7 @@ fun NavBar(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 // Left button area
-                if (useDefaultBack) {
+                if (showBack) {
                     NavBarIconButton(
                         icon = Icons.caretLeft,
                         iconColor = textColor,

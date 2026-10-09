@@ -68,6 +68,7 @@ import com.gearui.sample.examples.bottomsheet.BottomSheetExample
 import com.gearui.sample.examples.backtop.BackTopExample
 import com.gearui.sample.examples.runtime.InsetsDebugExample
 import com.gearui.sample.examples.runtime.MaterialExample
+import com.gearui.sample.examples.runtime.DesktopShellExample
 import com.gearui.sample.examples.runtime.TabHostExample
 import com.gearui.sample.examples.navigator.NavigatorKuiklySpikeExample
 import com.gearui.sample.examples.navigator.NavigatorV1DemoExample
@@ -161,6 +162,7 @@ object NavigationManager {
             "runtime-insets" -> InsetsDebugExample(component, onBack)
             "runtime-material" -> MaterialExample(component, onBack)
             "runtime-tabhost" -> TabHostExample(component, onBack)
+            "runtime-desktop" -> DesktopShellExample(component, onBack)
             "runtime-performance" -> PerformanceExample(component, onBack)
             "navigator-kuikly-spike" -> NavigatorKuiklySpikeExample(component, onBack)
             "navigator-v1-demo" -> NavigatorV1DemoExample(component, onBack)
